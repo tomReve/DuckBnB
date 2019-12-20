@@ -11,6 +11,7 @@ export interface Logement {
   nb_room: number;
   nb_traveler_max: number;
   creation_at: string;
+  slug: string;
 }
 
 @Injectable({
@@ -31,7 +32,7 @@ export class LogementService {
       });
     });
   }
-  getLogement(id: number): Logement {
-    return this.logements.find(logement => logement.id === id);
+  getLogement(slug): Logement {
+    return this.logements.find(logement => logement.slug === slug);
   }
 }

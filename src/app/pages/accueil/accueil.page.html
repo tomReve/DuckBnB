@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="welcome-card" *ngFor="let logement of logementService.logements" [routerLink]="'/tabs/logement/' + logement.id" routerDirection="forward">
+  <ion-card class="welcome-card" *ngFor="let logement of logementService.logements" [routerLink]="'/tabs/logement/' + logement.slug" routerDirection="forward">
     <ion-card-header>
       <ion-row class="ion-align-items-center">
         <p class="ion-margin-start">{{logement.title}}</p>

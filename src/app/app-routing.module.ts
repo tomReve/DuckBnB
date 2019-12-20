@@ -15,7 +15,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/detail-message/detail-message.module').then( m => m.DetailMessagePageModule)
   },
   {
-    path: 'tabs/logement/:id',
+    path: 'tabs/logement/:slug',
     loadChildren: () => import('./pages/detail-logement/detail-logement.module').then( m => m.DetailLogementPageModule)
   },
 

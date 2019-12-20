@@ -17,8 +17,8 @@ const routes: Routes = [
         loadChildren: () => import('../voyages/voyages.module').then( m => m.VoyagesPageModule)
       },
       {
-        path: 'voyages/detail',
-        loadChildren: () => import('../detail-voyage/detail-voyage.module').then( m => m.DetailVoyagePageModule)
+        path: 'logement/:slug',
+        loadChildren: () => import('../detail-logement/detail-logement.module').then( m => m.DetailLogementPageModule)
       },
       {
         path: 'messages',

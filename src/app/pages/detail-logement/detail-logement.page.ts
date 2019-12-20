@@ -9,15 +9,13 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class DetailLogementPage implements OnInit {
 
-  private id: string;
+  private slug: string;
   public logement: Logement;
   constructor(private route: ActivatedRoute, public logementService: LogementService) { }
 
   ngOnInit() {
-    this.logementService.load();
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.logement = this.logementService.getLogement(+this.id);
-    console.log(this.logement);
+    this.slug = this.route.snapshot.paramMap.get('slug');
+    this.logement = this.logementService.getLogement(this.slug);
   }
 
 }
