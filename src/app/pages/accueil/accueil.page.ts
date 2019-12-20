@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {LogementService} from '../../services/logement.service';
 
 @Component({
   selector: 'app-accueil',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, public logementService: LogementService) { }
 
   ngOnInit() {
+    this.logementService.load();
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+
 
 @Component({
   selector: 'app-detail-voyage',
@@ -7,12 +7,9 @@ import { ActivatedRoute} from '@angular/router';
   styleUrls: ['./detail-voyage.page.scss'],
 })
 export class DetailVoyagePage implements OnInit {
-
-  private id: string;
-  constructor(private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
   }
 
 }

@@ -1,5 +1,9 @@
 {
   "name": "DuckBnB",
   "integrations": {},
-  "type": "angular"
+  "type": "angular",
+  "proxies": [{
+    "path": "/services",
+    "proxyUrl": "http://149.91.88.101"
+  }]
 }

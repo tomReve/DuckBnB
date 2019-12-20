@@ -14,6 +14,11 @@ const routes: Routes = [
     path: 'tabs/messages/:id',
     loadChildren: () => import('./pages/detail-message/detail-message.module').then( m => m.DetailMessagePageModule)
   },
+  {
+    path: 'tabs/logement/:id',
+    loadChildren: () => import('./pages/detail-logement/detail-logement.module').then( m => m.DetailLogementPageModule)
+  },
+
 ];
 
 @NgModule({
