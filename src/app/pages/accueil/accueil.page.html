@@ -9,6 +9,7 @@
     <ion-card-header>
       <ion-row class="ion-align-items-center">
         <p class="ion-margin-start">{{logement.title}}</p>
+        <img [src]="domSanitizer.bypassSecurityTrustUrl(logement.picture)" [alt]="logement.title"/>
       </ion-row>
     </ion-card-header>
     <ion-card-content>

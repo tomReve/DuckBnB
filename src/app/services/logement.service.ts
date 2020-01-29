@@ -12,6 +12,7 @@ export interface Logement {
   nb_traveler_max: number;
   creation_at: string;
   slug: string;
+  picture: string;
 }
 
 @Injectable({
@@ -20,7 +21,7 @@ export interface Logement {
 export class LogementService {
   public logements: Logement[] = [];
   public loaded = false;
-  public apiUrl = 'http://149.91.88.101/private/duckbnbapi/public/api/housings';
+  public apiUrl = 'http://antonintouron.fr/private/duckbnbapi/public/api/housings';
   constructor(private http: HttpClient) { }
   load(): Promise<boolean> {
     return new Promise((resolve) => {

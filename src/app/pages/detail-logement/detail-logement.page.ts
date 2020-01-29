@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Logement, LogementService} from '../../services/logement.service';
 import {ActivatedRoute} from '@angular/router';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detail-logement',
@@ -11,7 +12,7 @@ export class DetailLogementPage implements OnInit {
 
   private slug: string;
   public logement: Logement;
-  constructor(private route: ActivatedRoute, public logementService: LogementService) { }
+  constructor(private route: ActivatedRoute, public logementService: LogementService, public domSanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.slug = this.route.snapshot.paramMap.get('slug');

@@ -9,6 +9,7 @@
 
 <ion-content>
   <ion-card>
+    <img [src]="domSanitizer.bypassSecurityTrustResourceUrl(this.logement.picture)" [alt]="this.logement.title">
     {{this.logement.title}} - {{this.logement.description}} - {{this.logement.price}} € - {{this.logement.address}} - {{this.logement.creation_at}} - {{this.logement.nb_bed}} lits - {{this.logement.nb_room}} chambres - {{this.logement.nb_traveler_max}} voyageurs
   </ion-card>
 </ion-content>
