@@ -1,0 +1,24 @@
+//font
+$poppins: Poppins, sans-serif;
+
+* {
+  font-family: $poppins;
+}
+
+ion-content {
+  h1 {
+    margin: 0 0 5px 1em;
+  }
+
+  h2 {
+    margin: .3em 0 .3em 2em;
+    font-size: 13px;
+  }
+
+  p {
+    margin: .5em 0 .5em 2em;
+    span {
+      margin-left: 1em;
+    }
+  }
+}

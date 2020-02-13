@@ -1,21 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <img src="../../../assets/icon/logo.svg" />
-    <ion-title>Home</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-searchbar animated placeholder='Essayez "Singapour"' class="searchbar"></ion-searchbar>
+    </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <ion-card class="welcome-card" *ngFor="let logement of logementService.logements" [routerLink]="'/tabs/logement/' + logement.slug" routerDirection="forward">
-    <ion-card-header>
-      <ion-row class="ion-align-items-center">
-        <p class="ion-margin-start">{{logement.title}}</p>
+    <ion-card class="welcome-card" *ngFor="let logement of logementService.logements"
+              [routerLink]="'/tabs/logement/' + logement.slug" routerDirection="forward">
         <img [src]="domSanitizer.bypassSecurityTrustUrl(logement.picture)" [alt]="logement.title"/>
-      </ion-row>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{ logement.description }}</p>
-      <p>{{logement.price}} € par nuit</p>
-    </ion-card-content>
-  </ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>{{logement.price}} € par nuit</ion-card-subtitle>
+            <ion-card-title>{{logement.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+            Wisconsin Territory in 1836.
+        </ion-card-content>
+    </ion-card>
 </ion-content>
