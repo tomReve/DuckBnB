@@ -27,7 +27,6 @@ export class LogementService {
     return new Promise((resolve) => {
       this.http.get(this.apiUrl, { responseType: 'text' }).subscribe(data => {
         this.logements = JSON.parse(data);
-        console.log(this.logements);
         resolve(true);
       }, error => {console.log(error);
       });

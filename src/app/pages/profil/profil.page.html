@@ -5,6 +5,10 @@
 </ion-header>
 
 <ion-content>
+  <ion-text>
+    Email de l'utilisateur : {{userLogged.email}}
+    Pseudo de l'utilisateur : {{userLogged.pseudo}}
+  </ion-text>
   <ion-button (click)="disconnect()">
     Deconnexion
   </ion-button>
