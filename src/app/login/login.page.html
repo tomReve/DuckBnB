@@ -5,6 +5,10 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-text ng-show="!isObjectEmpty(erreur)">
+    {{erreur}}
+  </ion-text>
   <form (ngSubmit)="login()">
     <ion-item>
       <ion-label>Email</ion-label>

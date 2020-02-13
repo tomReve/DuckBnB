@@ -13,6 +13,7 @@ export class LoginPage implements OnInit {
     email : '',
     password: ''
   };
+  erreur = '';
 
   constructor(private router: Router, private storage: Storage, private http: HttpClient) { }
 
@@ -22,25 +23,22 @@ export class LoginPage implements OnInit {
   login() {
     console.log(this.loginCredential);
 
-    if (this.loginCredential.email && this.loginCredential.password && 0 === 1) {
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-        })
-      };
+    if (this.loginCredential.email && this.loginCredential.password) {
       // tslint:disable-next-line:max-line-length
-      this.http.post('http://antonintouron.fr/private/duckbnbapi/public/api/users/' + this.loginCredential.email + '/logins/' + this.loginCredential.password, this.loginCredential)
+      this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/users/' + this.loginCredential.email + '/logins/' + this.loginCredential.password)
             .subscribe(data => {
               console.log(data);
-              this.storage.set('userAuthenticated', true);
+              if (Array.isArray(data)) {
+                this.storage.set('userAuthenticated', true);
+                this.router.navigate(['/']);
+              } else {
+                this.erreur = 'Informations de connexion incorrects';
+              }
             }, error => {
               console.log('erreur');
             });
     }
-    // A supprimer
-    this.storage.set('userAuthenticated', true);
     // Redirection vers la page d'accueil
-    this.router.navigate(['/']);
   }
 
 }
