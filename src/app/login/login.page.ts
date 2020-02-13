@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
   login() {
     console.log(this.loginCredential);
 
-    if (this.loginCredential.email && this.loginCredential.password) {
+    if (this.loginCredential.email && this.loginCredential.password && 0 === 1) {
       const httpOptions = {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
