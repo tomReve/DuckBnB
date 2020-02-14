@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
 
     if (this.loginCredential.email && this.loginCredential.password) {
       // tslint:disable-next-line:max-line-length
-      this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/users/' + this.loginCredential.email + '/logins/' + this.loginCredential.password)
+      this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/user/login/' + this.loginCredential.email + '/' + this.loginCredential.password)
             .subscribe(data => {
               console.log(data);
               if (Array.isArray(data)) {
