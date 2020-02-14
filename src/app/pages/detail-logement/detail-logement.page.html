@@ -1,8 +1,3 @@
-<script type="module">
-    import {modalController} from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
-
-    window.modalController = modalController;
-</script>
 <ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
@@ -11,29 +6,34 @@
         <ion-title>{{this.logement.title}}</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content>
-    <img [src]="domSanitizer.bypassSecurityTrustResourceUrl(this.logement.picture)" [alt]="this.logement.title">
-    <h1>{{this.logement.title}}</h1>
-    <h2>{{this.logement.price}} € par nuit</h2>
-    <p>
-        {{this.logement.description}}
-    </p>
-    <p>
-        <ion-icon name="pin-outline"></ion-icon>
-        <span>{{this.logement.address}}</span>
-    </p>
-    <p>
-        <ion-icon name="calendar-outline"></ion-icon>
-        <span>{{this.logement.creation_at}}</span>
-    </p>
+<ion-content fullscreen>
+    <ion-row class="ion-justify-content-center">
+        <img [src]="domSanitizer.bypassSecurityTrustResourceUrl(this.logement.picture)" [alt]="this.logement.title">
+    </ion-row>
+    <ion-row class="logement">
+        <h1>{{this.logement.title}}</h1>
+        <h2>{{this.logement.price}} € par nuit</h2>
 
-    <p>
-        <ion-icon name="bed-outline"></ion-icon>
-        <span>{{this.logement.nb_bed}} lits - {{this.logement.nb_room}} chambres</span>
-    </p>
+        <p>
+            {{this.logement.description}}
+        </p>
+        <p>
+            <ion-icon name="pin-outline"></ion-icon>
+            <span>{{this.logement.address}}</span>
+        </p>
+        <p>
+            <ion-icon name="calendar-outline"></ion-icon>
+            <span>{{this.logement.creation_at}}</span>
+        </p>
 
-    <p>
-        <ion-icon name="people-outline"></ion-icon>
-        <span>{{this.logement.nb_traveler_max}} voyageurs</span>
-    </p>
+        <p>
+            <ion-icon name="bed-outline"></ion-icon>
+            <span>{{this.logement.nb_bed}} lits - {{this.logement.nb_room}} chambres</span>
+        </p>
+        <p>
+            <ion-icon name="people-outline"></ion-icon>
+            <span>{{this.logement.nb_traveler_max}} voyageurs</span>
+        </p>
+    </ion-row>
+
 </ion-content>

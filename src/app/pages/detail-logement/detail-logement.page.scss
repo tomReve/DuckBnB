@@ -1,24 +1,10 @@
-//font
-$poppins: Poppins, sans-serif;
-
-* {
-  font-family: $poppins;
-}
-
-ion-content {
+.logement {
+  padding: 0 2.5em!important;
   h1 {
-    margin: 0 0 5px 1em;
+    width: 100%;
   }
-
   h2 {
-    margin: .3em 0 .3em 2em;
+    text-transform: uppercase;
     font-size: 13px;
-  }
-
-  p {
-    margin: .5em 0 .5em 2em;
-    span {
-      margin-left: 1em;
-    }
   }
 }
