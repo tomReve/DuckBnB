@@ -36,6 +36,7 @@ export class LoginPage implements OnInit {
                 this.erreur = 'Informations de connexion incorrects';
                   this.storage.set('userAuthenticated', true);
                   this.storage.set('user', {email : 'debug@gmail.com', pseudo: 'debug', id: 1});
+                  this.router.navigate(['/']);
               }
             }, error => {
               console.log('erreur');
