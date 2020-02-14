@@ -21,6 +21,7 @@ ion-content {
 
   form {
     margin-top: 0;
+
     ion-label {
       --color: rgba(#ff435b, .7) !important;
     }
@@ -31,16 +32,16 @@ ion-content {
 
     ion-button {
       --color: #ffb64c !important;
-      --border-color: #ffb64c!important;
-      --border-width: 2px!important;
-      --background: transparent!important;
+      --border-color: #ffb64c !important;
+      --border-width: 2px !important;
+      --background: transparent !important;
       border-radius: 13px;
       font-weight: 600;
+
       ion-label {
         color: #ffb64c !important;
       }
     }
-
   }
 
   a.light-link {
