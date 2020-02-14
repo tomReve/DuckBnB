@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
               console.log(data);
               if (Array.isArray(data)) {
                 this.storage.set('userAuthenticated', true);
-                this.storage.set('user', {email : data[0].email, pseudo: data[0].pseudo});
+                this.storage.set('user', {email : data[0].email, pseudo: data[0].pseudo, id: data[0].id});
                 this.router.navigate(['/']);
               } else {
                 this.erreur = 'Informations de connexion incorrects';

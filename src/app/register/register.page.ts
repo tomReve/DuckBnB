@@ -28,7 +28,9 @@ export class RegisterPage implements OnInit {
       this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/user/register/' + this.registerCredential.pseudo + '/' + this.registerCredential.email + '/' + this.registerCredential.password)
           .subscribe(data => {
             console.log(data);
+            // @ts-ignore
             if (data.message) {
+                // @ts-ignore
               this.erreur = data.message;
               console.log(this.erreur);
             } else {

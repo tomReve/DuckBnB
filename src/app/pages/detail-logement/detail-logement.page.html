@@ -36,4 +36,16 @@
         </p>
     </ion-row>
 
+    <form (ngSubmit)="book()">
+        <ion-item>
+            <ion-label>Jour d'arrivée</ion-label>
+            <ion-input type="date" [(ngModel)]="booking.dateDebut" name="dateDebut"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Jour de départ</ion-label>
+            <ion-input type="date" [(ngModel)]="booking.dateFin" name="dateFin"></ion-input>
+        </ion-item>
+        <ion-button type="submit">Réserver !</ion-button>
+    </form>
+
 </ion-content>
