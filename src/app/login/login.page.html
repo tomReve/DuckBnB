@@ -1,25 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Identification</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-text ng-show="!isObjectEmpty(erreur)">
-    {{erreur}}
-  </ion-text>
-  <form (ngSubmit)="login()">
-    <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-input type="email" [(ngModel)]="loginCredential.email" name="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Mot de passe</ion-label>
-      <ion-input type="password" [(ngModel)]="loginCredential.password" name="password"></ion-input>
-    </ion-item>
-    <ion-button type="submit">Connexion</ion-button>
-  </form>
-
-  <ion-button routerLink="/register">Inscription</ion-button>
+    <ion-text ng-show="!isObjectEmpty(erreur)">
+        {{erreur}}
+    </ion-text>
+    <form (ngSubmit)="login()" class="ion-align-items-center">
+        <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" [(ngModel)]="loginCredential.email" name="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Mot de passe</ion-label>
+            <ion-input type="password" [(ngModel)]="loginCredential.password" name="password"></ion-input>
+        </ion-item>
+        <ion-row class="ion-justify-content-center">
+            <ion-button type="submit" class="ion-activatable ripple-parent" size="large" color="warning">
+                Connexion
+                <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+            </ion-button>
+        </ion-row>
+    </form>
+    <ion-row class="ion-justify-content-center">
+        <a routerLink="/register" class="light-link">Inscription</a>
+    </ion-row>
 </ion-content>

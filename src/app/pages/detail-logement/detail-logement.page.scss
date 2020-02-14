@@ -7,4 +7,14 @@
     text-transform: uppercase;
     font-size: 13px;
   }
+  p {
+    width: 100%;
+    span {
+      color: #7b7d84;
+    }
+    ion-icon {
+      padding-right: 1em!important;
+      --ion-color-medium: #7b7d84!important;
+    }
+  }
 }

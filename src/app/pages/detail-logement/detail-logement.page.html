@@ -14,24 +14,25 @@
         <h1>{{this.logement.title}}</h1>
         <h2>{{this.logement.price}} € par nuit</h2>
 
-        <p>
+        <p class="ion-align-items-center">
             {{this.logement.description}}
         </p>
-        <p>
-            <ion-icon name="pin-outline"></ion-icon>
+        <p class="ion-align-items-center">
+            <ion-icon name="pin-outline" color="medium"></ion-icon>
             <span>{{this.logement.address}}</span>
         </p>
-        <p>
-            <ion-icon name="calendar-outline"></ion-icon>
+        <p class="ion-align-items-center">
+            <ion-icon name="calendar-outline" color="medium"></ion-icon>
             <span>{{this.logement.creation_at}}</span>
         </p>
 
-        <p>
-            <ion-icon name="bed-outline"></ion-icon>
+        <p class="ion-align-items-center">
+            <ion-icon name="bed-outline" color="medium"></ion-icon>
             <span>{{this.logement.nb_bed}} lits - {{this.logement.nb_room}} chambres</span>
         </p>
-        <p>
-            <ion-icon name="people-outline"></ion-icon>
+
+        <p class="ion-align-items-center">
+            <ion-icon name="people-outline" color="medium"></ion-icon>
             <span>{{this.logement.nb_traveler_max}} voyageurs</span>
         </p>
     </ion-row>
