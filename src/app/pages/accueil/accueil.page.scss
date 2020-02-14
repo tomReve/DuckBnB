@@ -1,6 +1,8 @@
-* {
-  .searchbar-input-container.sc-ion-searchbar-ios {
-    background-color: white!important;
-    box-shadow: grey 0 0 25px;
-  }
+.searchbar-input-container.sc-ion-searchbar-ios {
+  background-color: white !important;
+  box-shadow: grey 0 0 25px;
+}
+
+ion-card-title {
+  font-weight: 800;
 }

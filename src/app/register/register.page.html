@@ -1,27 +1,37 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Inscription</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-text ng-show="!isObjectEmpty(erreur)">
-    {{erreur}}
-  </ion-text>
-  <form (ngSubmit)="register()">
-    <ion-item>
-      <ion-label>Pseudo</ion-label>
-      <ion-input type="text" [(ngModel)]="registerCredential.pseudo" name="pseudo"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-input type="email" [(ngModel)]="registerCredential.email" name="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Mot de passe</ion-label>
-      <ion-input type="password" [(ngModel)]="registerCredential.password" name="password"></ion-input>
-    </ion-item>
-    <ion-button type="submit">Inscription</ion-button>
-  </form>
-  <ion-button routerLink="/login">Connexion</ion-button>
+    <ion-row class="ion-justify-content-center" class="logo">
+        <img src="../../assets/icon/logo.svg" alt="logo"/>
+        <h1>Duck<span>Bnb</span></h1>
+    </ion-row>
+    <ion-text ng-show="!isObjectEmpty(erreur)">
+        {{erreur}}
+    </ion-text>
+    <form (ngSubmit)="register()">
+        <ion-item>
+            <ion-label position="floating">Pseudo</ion-label>
+            <ion-input type="text" [(ngModel)]="registerCredential.pseudo" name="pseudo"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" [(ngModel)]="registerCredential.email" name="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Mot de passe</ion-label>
+            <ion-input type="password" [(ngModel)]="registerCredential.password" name="password"></ion-input>
+        </ion-item>
+        <ion-row class="ion-justify-content-center">
+            <ion-button type="submit" size="large" color="warning" fill="outline">
+                <ion-label class="link">Inscription</ion-label>
+            </ion-button>
+        </ion-row>
+    </form>
+    <ion-row class="ion-justify-content-center">
+        <a routerLink="/login" class="light-link">Connection</a>
+    </ion-row>
 </ion-content>

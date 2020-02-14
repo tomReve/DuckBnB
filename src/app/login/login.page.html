@@ -5,11 +5,15 @@
 </ion-header>
 
 <ion-content>
+        <ion-row class="ion-justify-content-center" class="logo">
+            <img src="../../assets/icon/logo.svg" alt="logo" />
+            <h1>Duck<span>Bnb</span></h1>
+        </ion-row>
 
     <ion-text ng-show="!isObjectEmpty(erreur)">
         {{erreur}}
     </ion-text>
-    <form (ngSubmit)="login()" class="ion-align-items-center">
+    <form (ngSubmit)="login()">
         <ion-item>
             <ion-label position="floating">Email</ion-label>
             <ion-input type="email" [(ngModel)]="loginCredential.email" name="email"></ion-input>
@@ -19,9 +23,8 @@
             <ion-input type="password" [(ngModel)]="loginCredential.password" name="password"></ion-input>
         </ion-item>
         <ion-row class="ion-justify-content-center">
-            <ion-button type="submit" class="ion-activatable ripple-parent" size="large" color="warning">
-                Connexion
-                <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+            <ion-button type="submit" size="large" color="warning" fill="outline">
+                <ion-label class="link">Connection</ion-label>
             </ion-button>
         </ion-row>
     </form>
