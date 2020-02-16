@@ -35,6 +35,7 @@ export class DetailLogementPage implements OnInit {
     this.storage.get('user').then((user) => {
       this.userLogged = user;
     });
+    console.log(this.logement);
   }
   book() {
     console.log(this.booking);

@@ -7,9 +7,9 @@ export interface Logement {
   description: string;
   price: number;
   address: string;
-  nb_bed: number;
-  nb_room: number;
-  nb_traveler_max: number;
+  nbBed: number;
+  nbRoom: number;
+  nbTravelerMax: number;
   createdAt: string;
   slug: string;
   picture: string;
