@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 export interface Logement {
   id: number;
@@ -29,12 +31,29 @@ export class AddLogementPage implements OnInit {
     nb_room: '',
     nb_traveler_max: '',
   };
-  constructor() { }
+  erreur = '';
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
   }
   addLogement() {
     console.log(this.logement);
+    if (this.logement.title) {
+      // tslint:disable-next-line:max-line-length
+      this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/housing/create/' + this.logement.title + '/' + this.logement.description + '/' + this.logement.price + '/' + this.logement.address + '/' + this.logement.nb_bed + '/' + this.logement.nb_room + '/' + this.logement.nb_traveler_max)
+          .subscribe(data => {
+            console.log(data);
+            // @ts-ignore
+            if (data.code === 201) {
+              this.router.navigate(['/']);
+            } else {
+              // @ts-ignore
+              this.erreur = data.message;
+            }
+          }, error => {
+            console.log('erreur');
+          });
+    }
   }
 
 }

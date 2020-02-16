@@ -14,7 +14,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class DetailLogementPage implements OnInit {
 
   private slug: string;
-  public logement: Logement;
+  logement: Logement;
   booking = {
     dateDebut: '',
     dateFin: ''
