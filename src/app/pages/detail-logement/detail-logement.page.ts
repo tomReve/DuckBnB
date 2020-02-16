@@ -45,10 +45,8 @@ export class DetailLogementPage implements OnInit {
           .subscribe(data => {
             console.log(data);
             // @ts-ignore
-            if (data.message) {
-              // @ts-ignore
-              this.erreur = data.message;
-              console.log(this.erreur);
+            if (data.code === 201) {
+              this.router.navigate(['/tabs/voyages']);
             }
           }, error => {
             console.log('erreur');

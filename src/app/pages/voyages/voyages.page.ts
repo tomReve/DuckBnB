@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Storage} from "@ionic/storage";
+import {Storage} from '@ionic/storage';
 import { HttpClient } from '@angular/common/http';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-voyages',
@@ -13,10 +14,13 @@ export class VoyagesPage implements OnInit {
     pseudo: '',
     id: ''
   };
-  bookings = '';
+  bookings;
   self = this;
-  constructor(private storage: Storage, private http: HttpClient) { }
-
+  constructor(private storage: Storage, private http: HttpClient, public domSanitizer: DomSanitizer) { }
+  ionViewWillEnter(){
+    this.getUser();
+    this.getUserReservations();
+  }
   ngOnInit() {
     this.getUser();
     this.getUserReservations();
@@ -26,15 +30,17 @@ export class VoyagesPage implements OnInit {
       this.userLogged = user;
     });
   }
-  getUserReservations() {
+  getUserReservations(): Promise<boolean> {
     const that = this;
     if (this.userLogged.id) {
-      this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/bookings/read/4')
-          .subscribe(data => {
-            console.log(data);
-          }, error => {
-            console.log('erreur');
-          });
+      return new Promise((resolve) => {
+        this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/bookings/read/' + this.userLogged.id).subscribe(data => {
+          this.bookings = data;
+          resolve(true);
+        }, error => {
+          console.log(error);
+        });
+      });
     } else {
       // tslint:disable-next-line:only-arrow-functions
       setTimeout(function() {that.getUserReservations(); }, 100);

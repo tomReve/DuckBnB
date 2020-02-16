@@ -14,39 +14,41 @@
         <h1>{{this.logement.title}}</h1>
         <h2>{{this.logement.price}} € par nuit</h2>
 
-        <p class="ion-align-items-center">
+        <p class="ion-align-items-baseline">
             {{this.logement.description}}
         </p>
-        <p class="ion-align-items-center">
-            <ion-icon name="pin-outline" color="medium"></ion-icon>
+        <p class="ion-align-items-baseline border">
+            <ion-icon name="navigate" color="danger"></ion-icon>
             <span>{{this.logement.address}}</span>
         </p>
-        <p class="ion-align-items-center">
-            <ion-icon name="calendar-outline" color="medium"></ion-icon>
-            <span>{{this.logement.creation_at}}</span>
+        <p class="ion-align-items-baseline border">
+            <ion-icon name="calendar" color="danger"></ion-icon>
+            <span>{{this.logement.createdAt}}</span>
         </p>
 
-        <p class="ion-align-items-center">
-            <ion-icon name="bed-outline" color="medium"></ion-icon>
+        <p class="ion-align-items-baseline border">
+            <ion-icon name="bed" color="danger"></ion-icon>
             <span>{{this.logement.nb_bed}} lits - {{this.logement.nb_room}} chambres</span>
         </p>
 
-        <p class="ion-align-items-center">
-            <ion-icon name="people-outline" color="medium"></ion-icon>
+        <p class="ion-align-items-baseline">
+            <ion-icon name="people" color="danger"></ion-icon>
             <span>{{this.logement.nb_traveler_max}} voyageurs</span>
         </p>
     </ion-row>
 
-    <form (ngSubmit)="book()">
+    <form (ngSubmit)="book()" id="reservations">
         <ion-item>
             <ion-label>Jour d'arrivée</ion-label>
-            <ion-input type="date" [(ngModel)]="booking.dateDebut" name="dateDebut"></ion-input>
+            <ion-input type="date" [(ngModel)]="booking.dateDebut" name="dateDebut" placeholder="Choisir une date"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Jour de départ</ion-label>
-            <ion-input type="date" [(ngModel)]="booking.dateFin" name="dateFin"></ion-input>
+            <ion-input type="date" [(ngModel)]="booking.dateFin" name="dateFin" placeholder="Choisir une date"></ion-input>
         </ion-item>
-        <ion-button type="submit">Réserver !</ion-button>
+        <ion-row class="ion-justify-content-center">
+            <ion-button type="submit" color="danger" size="large">Réserver !</ion-button>
+        </ion-row>
     </form>
 
 </ion-content>

@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Voyages</ion-title>
+    <ion-title>Vos voyages</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card class="welcome-card" *ngFor="let booking of bookings">
+    <img [src]="domSanitizer.bypassSecurityTrustUrl(booking.housing.picture)" [alt]="booking.housing.title"/>
+    <ion-card-header>
+      <ion-card-subtitle>{{booking.dateStart}} - {{booking.dateEnd}}</ion-card-subtitle>
+      <ion-card-title>{{booking.housing.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        {{booking.housing.adresse}}
+      </p>
+      <p>
+        {{booking.housing.price}} €
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
