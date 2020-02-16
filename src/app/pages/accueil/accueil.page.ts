@@ -23,4 +23,8 @@ export class AccueilPage implements OnInit {
       this.logementService.getFilteredLogement(searchTerm);
     }
   }
+
+  cancelFilter(evt) {
+    this.logementService.load();
+  }
 }
