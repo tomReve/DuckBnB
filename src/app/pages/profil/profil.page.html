@@ -6,19 +6,21 @@
 
 <ion-content>
     <ion-row class="ion-justify-content-center change-photo">
-        <img src="../../assets/icon/person.svg" alt="person" />
+        <img src="../../assets/icon/person.svg" alt="person"/>
     </ion-row>
 
     <h1>V{{userLogged.pseudo}}</h1>
     <ion-item>
         <ion-label>
-            Votre email : {{userLogged.email}}
+            <ion-icon name="mail" color="danger"></ion-icon>
+            <span>{{userLogged.email}}</span>
         </ion-label>
     </ion-item>
+
     <ion-row class="ion-justify-content-center">
         <ion-button (click)="disconnect()" fill="outline">
             <ion-label>
-              Déconnection
+                Déconnection
             </ion-label>
         </ion-button>
     </ion-row>

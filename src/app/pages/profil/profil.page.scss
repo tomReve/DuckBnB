@@ -4,15 +4,27 @@ ion-content {
     margin: 0;
 
     img {
+      width: 80px;
       height: 80px;
       padding: .5em;
-      border: 2px solid #ffb64c;
-      border-radius: 50% / 50%;
+      border: 2px solid #ff7b4a;
+      border-radius: 50%;
     }
   }
 
   h1 {
     text-align: center;
+  }
+
+  ion-item {
+    margin-top: 2em;
+    margin-left: 1em;
+    --border-width: none;
+    --border-style: none;
+    ion-icon {
+      padding-right: 1em;
+      --ion-color-danger: #ff7b4a;
+    }
   }
 
   ion-row {
