@@ -11,10 +11,9 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 export class LoginPage implements OnInit {
   loginCredential = {
     email : '',
-    password: ''
+    password: '',
   };
   erreur = '';
-
   constructor(private router: Router, private storage: Storage, private http: HttpClient) { }
 
   ngOnInit() {
@@ -22,12 +21,11 @@ export class LoginPage implements OnInit {
 
   login() {
     console.log(this.loginCredential);
-
     if (this.loginCredential.email && this.loginCredential.password) {
       // tslint:disable-next-line:max-line-length
       this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/user/login/' + this.loginCredential.email + '/' + this.loginCredential.password)
-            .subscribe(data => {
-              console.log(data);
+            .subscribe((data: any) => {
+              console.log();
               if (data.message) {
                 this.erreur = 'Informations de connexion incorrects';
               } else {

@@ -2,6 +2,9 @@
     <ion-toolbar>
         <ion-searchbar animated placeholder='Essayez "Singapour"' class="searchbar"></ion-searchbar>
     </ion-toolbar>
+    <ion-button routerLink="/add-logement">
+        Créer un logement
+    </ion-button>
 </ion-header>
 <ion-content fullscreen>
     <ion-card class="welcome-card" *ngFor="let logement of logementService.logements"

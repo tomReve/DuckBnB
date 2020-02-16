@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Proposez votre logement</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="addLogement()">
+    <ion-item>
+      <ion-label position="floating">Titre</ion-label>
+      <ion-input type="text" [(ngModel)]="logement.title" name="title" required="required"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prix (€)</ion-label>
+      <ion-input type="number" [(ngModel)]="logement.price" name="price" required="required"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Adresse</ion-label>
+      <ion-input type="text" [(ngModel)]="logement.address" name="adresse" required="required"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre de lit</ion-label>
+      <ion-input type="number" [(ngModel)]="logement.nb_bed" name="nb_bed" required="required"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre de chambre</ion-label>
+      <ion-input type="number" [(ngModel)]="logement.nb_room" name="nb_room" required="required"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre de voyageur maximum</ion-label>
+      <ion-input type="number" [(ngModel)]="logement.nb_traveler_max" name="nb_traveler_max" required="required"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea [(ngModel)]="logement.description" name="desc"></ion-textarea>
+    </ion-item>
+    <ion-row class="ion-justify-content-center">
+      <ion-button type="submit" size="large" color="warning" fill="outline">
+        <ion-label class="link">Ajouter mon logement</ion-label>
+      </ion-button>
+    </ion-row>
+  </form>
+</ion-content>

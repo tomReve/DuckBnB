@@ -23,10 +23,15 @@ const routes: Routes = [
   {
     path: 'tabs/logement/:slug',
     loadChildren: () => import('./pages/detail-logement/detail-logement.module').then( m => m.DetailLogementPageModule)
-  },  {
+  },
+  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },  {
+    path: 'add-logement',
+    loadChildren: () => import('./add-logement/add-logement.module').then( m => m.AddLogementPageModule)
   },
+
 
 ];
 
