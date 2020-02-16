@@ -1,0 +1,11 @@
+ion-tabs {
+  ion-tab-bar {
+    padding-bottom: .5em;
+    padding-top: .5em;
+    ion-tab-button {
+      --color: #ffb64c;
+      --color-selected: #ff9100;
+      --color-focused: #ff9100;
+    }
+  }
+}
