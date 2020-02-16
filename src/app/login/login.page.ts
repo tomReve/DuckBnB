@@ -28,20 +28,15 @@ export class LoginPage implements OnInit {
       this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/user/login/' + this.loginCredential.email + '/' + this.loginCredential.password)
             .subscribe(data => {
               console.log(data);
-              if (Array.isArray(data)) {
-                this.storage.set('userAuthenticated', true);
-                this.storage.set('user', {email : data[0].email, pseudo: data[0].pseudo, id: data[0].id});
-                this.router.navigate(['/']);
-              } else {
+              if (data.message) {
                 this.erreur = 'Informations de connexion incorrects';
-                  this.storage.set('userAuthenticated', true);
-                  this.storage.set('user', {email : 'debug@gmail.com', pseudo: 'debug', id: 1});
-                  this.router.navigate(['/']);
+              } else {
+                this.storage.set('userAuthenticated', true);
+                this.storage.set('user', {email : data.email, pseudo: data.pseudo, id: data.id});
+                this.router.navigate(['/']);
               }
             }, error => {
               console.log('erreur');
-              this.storage.set('userAuthenticated', true);
-              this.storage.set('user', {email : 'debug@gmail.com', pseudo: 'debug', id: 1});
             });
     }
     // Redirection vers la page d'accueil
