@@ -1,0 +1,28 @@
+ion-header {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(#ccc, .5);
+
+  ion-row {
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    ion-back-button {
+      margin: 1em .5em 1em;
+      width: 20px;
+      --background: #fff;
+    }
+  }
+}
+
+form {
+  ion-label {
+    --color: #9787ff;
+    padding: .5em 0;
+  }
+  ion-button {
+    --background: #5d45ff;
+    --background-hover: #5d45ff!important;
+    margin: 2em 0;
+  }
+}

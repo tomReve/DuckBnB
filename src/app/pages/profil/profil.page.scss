@@ -7,7 +7,7 @@ ion-content {
       width: 80px;
       height: 80px;
       padding: .5em;
-      border: 2px solid #ffa98f;
+      border: 2px solid #9787ff;
       border-radius: 50%;
     }
   }
@@ -23,7 +23,7 @@ ion-content {
     --border-style: none;
     ion-icon {
       padding-right: 1em;
-      --ion-color-danger: #ff7b4a;
+      --ion-color-danger: #9787ff;
     }
   }
 
@@ -31,7 +31,7 @@ ion-content {
 
     ion-button {
       position: absolute;
-      bottom: 2em;
+      bottom: .5em;
       --color: #ccc;
       --border-color: #ccc;
       --border-width: 2px;
