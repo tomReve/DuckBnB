@@ -1,8 +1,43 @@
-.searchbar-input-container.sc-ion-searchbar-ios {
-  background-color: white;
-  box-shadow: grey 0 0 25px;
+ion-header {
 }
 
-ion-card-title {
-  font-weight: 800;
+ion-content {
+
+  a.add-logement {
+    transform: rotate(90deg);
+    padding: 1em;
+    background-color: #5d45ff;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 0 0 3px #5d45ff;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    z-index: 999;
+    position: fixed;
+    display: flex;
+    right: -2.5em;
+    top: 30%;
+    align-items: center;
+
+    span {
+      transform: rotate(180deg);
+    }
+
+    ion-icon {
+      color: #fff;
+      --ionicon-stroke-width: 80px;
+      font-size: 1em;
+    }
+  }
+
+  .searchbar-input-container.sc-ion-searchbar-ios {
+    background-color: white;
+    box-shadow: grey 0 0 25px;
+  }
+
+  ion-card-title {
+    font-weight: 800;
+  }
+
 }
