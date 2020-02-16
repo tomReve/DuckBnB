@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {LogementService} from '../../services/logement.service';
 import {DomSanitizer} from '@angular/platform-browser';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-accueil',
@@ -9,11 +10,17 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./accueil.page.scss'],
 })
 export class AccueilPage implements OnInit {
-
-  constructor(private router: Router, public logementService: LogementService, public domSanitizer: DomSanitizer) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private router: Router, public logementService: LogementService, public domSanitizer: DomSanitizer,private http: HttpClient) { }
 
   ngOnInit() {
     this.logementService.load();
   }
 
+  setFilteredItems(evt) {
+    const searchTerm = evt.target.value;
+    if (searchTerm) {
+      this.logementService.getFilteredLogement(searchTerm);
+    }
+  }
 }

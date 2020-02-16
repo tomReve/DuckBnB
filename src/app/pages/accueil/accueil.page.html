@@ -1,6 +1,8 @@
 <ion-header>
     <ion-toolbar>
-        <ion-searchbar animated placeholder='Essayez "Singapour"' class="searchbar"></ion-searchbar>
+        <ion-searchbar animated placeholder='Essayez "Singapour"' class="searchbar"
+                        (input)="setFilteredItems($event)" debounce="1000">
+        </ion-searchbar>
     </ion-toolbar>
     <ion-button routerLink="/add-logement">
         Créer un logement

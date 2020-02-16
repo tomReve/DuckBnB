@@ -35,4 +35,14 @@ export class LogementService {
   getLogement(slug): Logement {
     return this.logements.find(logement => logement.slug === slug);
   }
+  getFilteredLogement(searchTerm): Promise<boolean> {
+    return new Promise((resolve) => {
+      // tslint:disable-next-line:max-line-length
+      this.http.get('http://antonintouron.fr/private/duckbnbapi/public/api/housings/search/' + searchTerm, { responseType: 'text' }).subscribe(data => {
+        this.logements = JSON.parse(data);
+        resolve(true);
+      }, error => {console.log(error);
+      });
+    });
+  }
 }
