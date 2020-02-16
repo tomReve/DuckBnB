@@ -27,7 +27,7 @@
 
   ion-icon {
     padding-right: 1em;
-    --ion-color-danger: #ff435b;
+    color: #ff4929;
   }
 }
 
@@ -39,6 +39,8 @@
 
   ion-button {
     margin: 2em 0;
-    --ion-color-danger: #ff0424;
+    --background: #ff4929;
+    --background-focused: #ffaea0;
+    --background-hover: #ff6247;
   }
 }

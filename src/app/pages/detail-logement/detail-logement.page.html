@@ -18,21 +18,21 @@
             {{this.logement.description}}
         </p>
         <p class="ion-align-items-baseline border">
-            <ion-icon name="navigate" color="danger"></ion-icon>
+            <ion-icon name="navigate"></ion-icon>
             <span>{{this.logement.address}}</span>
         </p>
         <p class="ion-align-items-baseline border">
-            <ion-icon name="calendar" color="danger"></ion-icon>
+            <ion-icon name="calendar"></ion-icon>
             <span>{{this.logement.createdAt}}</span>
         </p>
 
         <p class="ion-align-items-baseline border">
-            <ion-icon name="bed" color="danger"></ion-icon>
+            <ion-icon name="bed"></ion-icon>
             <span>{{this.logement.nbBed}} lits - {{this.logement.nbRoom}} chambres</span>
         </p>
 
         <p class="ion-align-items-baseline">
-            <ion-icon name="people" color="danger"></ion-icon>
+            <ion-icon name="people"></ion-icon>
             <span>{{this.logement.nbTravelerMax}} voyageurs</span>
         </p>
     </ion-row>
@@ -47,7 +47,7 @@
             <ion-input type="date" [(ngModel)]="booking.dateFin" name="dateFin" placeholder="Choisir une date"></ion-input>
         </ion-item>
         <ion-row class="ion-justify-content-center">
-            <ion-button type="submit" color="danger" size="large">Réserver !</ion-button>
+            <ion-button type="submit" size="large">Réserver !</ion-button>
         </ion-row>
     </form>
 

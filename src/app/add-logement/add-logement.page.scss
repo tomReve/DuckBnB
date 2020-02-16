@@ -16,13 +16,19 @@ ion-header {
 }
 
 form {
+  ion-item {
+    width: 100%;
+    margin: 0 20px;
+    --inner-border-width: 0;
+    border-bottom: solid 1px #eee;
+  }
   ion-label {
-    --color: #9787ff;
+    --color: #a9a9a9;
     padding: .5em 0;
   }
   ion-button {
-    --background: #5d45ff;
-    --background-hover: #5d45ff!important;
+    --background: #ff4757;
+    --background-hover: #ff4757!important;
     margin: 2em 0;
   }
 }
